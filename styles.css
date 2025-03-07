@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+    scroll-behavior: smooth  ;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: "Libre Baskerville", serif;
+}
+
+:root {
+  --li-bg-color: #3498db;  /* Blue */
+  --text-shadow: rgba(168, 168, 168, 0.596); /* Green */
+  --font-size: 16px;
+  --border-radius: 5px;
+}
+
+
+#navbar{
+  border-radius: 80px;
+  margin-top: 1.5rem;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 2%;
+  z-index: 100;
+}
+#navbar-ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  width: 40rem;
+}
+
+#navbar-ul a{
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar-li{
+  width: 5rem;
+  height: 4rem !important;
+  font-family:  Futura, sans-serif;
+  background: url(./Images/silver-bg.jpg);
+  background-size: cover;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 10px 10px var(--text-shadow)
+  , 0px -10px 10px var(--text-shadow)
+  , 10px 0px 10px var(--text-shadow)
+  , -10px 0px 10px var(--text-shadow)
+  ;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  font-size: 1rem;  
+  font-weight: 700;
+  list-style-type: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transform: rotateZ(40deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  box-shadow: 4px 3px 0px 1px rgb(230, 214, 184);
+  overflow: hidden;
+}
+
+.navbar-li span{
+  transform: rotateZ(-45deg);
+}
+
+.navbar-li.selected{
+ animation: click 0.3s ease-in-out 1 alternate ;
+}
+
+@keyframes click {
+  from{
+    transform: rotateZ(40deg) scale(0.9);
+  }
+  to{
+    transform: rotateZ(40deg) scale(1);
+  }
+}
+
+.navbar-li:hover{
+  transform: rotateZ(38deg);
+}
+
+
+
+/* media queries for the navbar starts */
+
+/* For small devices (phones, portrait mode) */
+@media (max-width: 480px) {
+  #navbar{
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 380px) {
+  .navbar-li{
+    font-size: 1rem;
+  }
+  .navbar-li:hover{
+    font-size: 1.1rem;
+  }
+}
+/* media queries for the navbar ends */
+
+
+/* main section code starts */
+
+/* section 1 code starts */
+
+#section-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 60rem;
+  /* background-color: aquamarine; */
+  position: relative;
+  text-align: center;
+}
+
+.shop-name{
+  
+  font-size: 7rem;
+  color: rgb(255, 196, 0);
+  z-index: 1;
+  margin-bottom: 35rem;
+  text-shadow: 0px 5px 10px rgb(255, 196, 0);
+
+}
+
+
+.hero-container{
+  width: 100%;
+ height: 100%;
+ position: relative;
+}
+
+.hero-bg-img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* section 1 code ends */
+
+.moto{
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  font-size: 2rem;
+  /* background-color: aquamarine; */
+  text-wrap-mode:nowrap;
+  animation: scroll-left 25s linear infinite
+}
+
+.moto img{
+  width: 100px;
+  margin: 0px 20px;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(65%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* section 2 code starts */
+
+#section-2{
+  width: 100vw;
+  height: 50rem;
+}
+
+/* section 2 code starts */
+
+
+/* main section code ends */
