@@ -15,13 +15,12 @@ body{
 }
 
 :root {
-  --li-bg-color: #3498db;  /* Blue */
-  --text-shadow: rgba(168, 168, 168, 0.596); /* Green */
-  --font-size: 16px;
-  --border-radius: 5px;
+  --text-shadow: rgba(168, 168, 168, 0.596); 
 }
 
-
+header{
+  overflow-x: hidden;
+}
 #navbar{
   border-radius: 80px;
   margin-top: 1.5rem;
@@ -122,6 +121,10 @@ body{
 
 /* section 1 code starts */
 
+main{
+  overflow-x: hidden;
+}
+
 #section-1{
   display: flex;
   justify-content: center;
@@ -152,7 +155,7 @@ body{
 
 .hero-bg-img{
   object-fit: cover;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   z-index: -1;
   position: absolute;
@@ -202,6 +205,15 @@ body{
   padding: 5rem 0;
 }
 
+.section2-main-heading-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  font-size: 2rem;
+}
+  
 .section2-img-description-container{
   height: 30rem;
   width: 100%;
@@ -267,10 +279,22 @@ body{
 .section2-image {
   width: 35rem;
   height: 20rem;
-  border: 3px solid black;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   cursor: pointer;
+  position: relative;
+}
+
+.section2-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid black; /* Regular border */
+  filter: blur(5px); /* Applies the blur effect */
+  z-index: -1; /* Places the blurred border behind the content */
 }
 
 .section2-image img{
@@ -280,7 +304,41 @@ body{
   border-radius: 5px;
 }
 
+@media (max-width:600px) {
+  .section2-img-description-container{
+    flex-direction: column;
+    /* background-color: beige; */
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
 
+  .section2-img-description-container.container2{
+    flex-direction: column-reverse;
+    /* background-color: beige; */
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+
+  .section2-description-conatiner{
+    width: 100%;
+    padding: 0 10%;
+    height: 20%;
+    
+  }
+  .section2-image-container, .section2-image-container.even{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section2-image {
+    width: 25rem;
+    height: 17rem;
+  }
+  
+}
 /* section 2 code starts */
 
 
