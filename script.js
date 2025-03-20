@@ -117,7 +117,6 @@ gsap.to("#section-3 .section-3-cake-images-container",{
     scrollTrigger:{
       trigger:"#section-3",
       scroller:"body",
-      markers:true,
       start:"top 0%",
       end:"top -100%",
       scrub:4,
