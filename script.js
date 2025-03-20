@@ -107,4 +107,21 @@ tl.from(".section2-image.odd2", {
   }
 }, "<");
 
+
+gsap.set("#section-3 .section-3-cake-images-container", { x: "65%" });
+
+
+gsap.to("#section-3 .section-3-cake-images-container",{
+  x: "-45%",
+    ease: "power1.inOut",
+    scrollTrigger:{
+      trigger:"#section-3",
+      scroller:"body",
+      markers:true,
+      start:"top 0%",
+      end:"top -100%",
+      scrub:4,
+      pin:true
+    }
+})
   

@@ -6,12 +6,15 @@
     padding: 0;
     box-sizing: border-box ;
     scroll-behavior: smooth  ;
+    user-select: none;
+    
 }
 body{
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
   font-family: "Libre Baskerville", serif;
+  cursor: url(https://i.postimg.cc/PqzQYw34/lollipop-1.png) 16 16, auto;
 }
 
 :root {
@@ -40,8 +43,8 @@ header{
 }
 
 .navbar-li{
-  width: 5rem;
-  height: 4rem !important;
+  width: 4.5rem;
+  height: 3.5rem !important;
   background: url(https://i.postimg.cc/ZnXZPmLn/silver-bg.jpg);
   background-size: cover;
   padding-left: 1rem;
@@ -50,12 +53,12 @@ header{
   font-weight: 700;
   list-style-type: none;
   cursor: pointer;
+  /* cursor: url(https://i.postimg.cc/RhjgXzcQ/Capture.png) 16 16, auto; */
   border-radius: 5px;
   transform: rotateZ(40deg);
   display: flex;
   justify-content: center;
   align-items: center;
-  user-select: none;
   box-shadow: 4px 3px 0px 1px rgb(230, 214, 184);
   overflow: hidden;
 }
@@ -63,7 +66,7 @@ header{
 
 .navbar-li .navLinks{
   font-family:  Futura, sans-serif;
-  font-size: 1rem;  
+  font-size: 0.9rem;  
   text-decoration: none !important;
   transition: all 0.5s ease-in-out;
   color: rgb(255, 255, 255);
@@ -72,6 +75,7 @@ header{
   , 10px 0px 10px var(--text-shadow)
   , -10px 0px 10px var(--text-shadow)
   ;
+   /* cursor: url(https://i.postimg.cc/RhjgXzcQ/Capture.png) 16 16, auto; */
 }
 
 .navLinks span{
@@ -118,22 +122,26 @@ header{
 
 
 /* main section code starts */
-
-/* section 1 code starts */
-
 main{
   overflow-x: hidden;
 }
 
-#section-1{
+
+#section-1, #section-3{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   width: 100vw;
   height: 100vh;
-  /* background-color: aquamarine; */
   position: relative;
   text-align: center;
+}
+
+/* section 1 code starts */
+
+#section-1{
+    justify-content: center;
+    align-items: start;
 }
 
 .shop-name{
@@ -141,7 +149,7 @@ main{
   font-size: 7rem;
   color: rgb(255, 196, 0);
   z-index: 1;
-  margin-bottom: 28rem;
+  margin-top:6rem;
   text-shadow: 0px 5px 10px rgb(255, 196, 0);
 
 }
@@ -228,7 +236,6 @@ main{
   display: flex;
   align-items: center;
   text-align: center;
-  user-select: none;
   /* background-color: beige; */
 }
 
@@ -281,7 +288,7 @@ main{
   height: 20rem;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  cursor: pointer;
+  /* cursor: pointer; */
   position: relative;
 }
 
@@ -341,6 +348,63 @@ main{
 }
 /* section 2 code starts */
 
+/* section 3 code starts */
+
+#section-3{
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: bisque; */
+  
+}
+
+.section-3-heading-container{
+  width: 30rem;
+  font-size: 2rem;
+  position: absolute;
+  left: -20%;
+  top: 25%;
+}
+
+.section-3-heading-container img{
+  width: 20rem;
+  position: absolute;
+  top: -150% !important;
+  left: -40%;
+}
+
+.section-3-cake-images-container{
+  display: flex;
+}
+
+.section-3-btw-cake-headings{
+  height: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  width: 15rem;
+  margin-right: 2rem;
+}
+
+.section-3-cake-images{
+  width: 30rem;
+  height: 20rem;
+  margin: 1rem;
+  margin-right: 4rem;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.section-3-cake-images img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+
+/* section 3 code ends */
 
 /* main section code ends */
 
