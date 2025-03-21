@@ -108,7 +108,7 @@ tl.from(".section2-image.odd2", {
 }, "<");
 
 
-gsap.set("#section-3 .section-3-cake-images-container", { x: "65%" });
+gsap.set("#section-3 .section-3-cake-images-container", { x: "70%" });
 
 
 gsap.to("#section-3 .section-3-cake-images-container",{
