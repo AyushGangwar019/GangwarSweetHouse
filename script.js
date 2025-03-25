@@ -122,6 +122,8 @@ window.addEventListener('resize', function() {
 });
 
 
+
+
 if (window.innerWidth <= 480) {
   gsap.set("#section-3 .section-3-cake-images-container", { x: "60%" });
 }
