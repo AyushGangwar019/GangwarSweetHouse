@@ -108,13 +108,17 @@ tl.from(".section2-image.odd2", {
 }, "<");
 
 
-let hasReloaded = false;
+let hasReloaded = false;  
+let lastWidth = window.innerWidth;  
 
 window.addEventListener('resize', function() {
-  if (window.innerWidth <= 480 && !hasReloaded) {
-    hasReloaded = true;
-    window.location.reload();
+ 
+  if (lastWidth > 480 && window.innerWidth <= 480 && !hasReloaded) {
+    hasReloaded = true;  
+    window.location.reload();  
   }
+
+  lastWidth = window.innerWidth;
 });
 
 
