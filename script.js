@@ -108,8 +108,11 @@ tl.from(".section2-image.odd2", {
 }, "<");
 
 
+let hasReloaded = false;
+
 window.addEventListener('resize', function() {
-  if (window.innerWidth <= 480) {
+  if (window.innerWidth <= 480 && !hasReloaded) {
+    hasReloaded = true;
     window.location.reload();
   }
 });
