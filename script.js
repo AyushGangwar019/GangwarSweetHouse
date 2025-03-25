@@ -108,7 +108,20 @@ tl.from(".section2-image.odd2", {
 }, "<");
 
 
-gsap.set("#section-3 .section-3-cake-images-container", { x: "70%" });
+window.addEventListener('resize', function() {
+  if (window.innerWidth <= 480) {
+    window.location.reload();
+  }
+});
+
+
+if (window.innerWidth <= 480) {
+  gsap.set("#section-3 .section-3-cake-images-container", { x: "60%" });
+}
+else{
+  gsap.set("#section-3 .section-3-cake-images-container", { x: "70%" });
+}
+
 
 
 gsap.to("#section-3 .section-3-cake-images-container",{
