@@ -545,6 +545,53 @@ main{
   text-align: left;
 }
 
+.tap-here-image-container{
+  width: 3rem;
+  position: absolute;
+  top: 85%;
+}
+
+.tap-image-back-ring{
+position: absolute;
+border-radius: 50%;
+border: 5px solid rgb(255, 0, 157);
+top: -40%;
+left: -1%;
+/* background-color: rgba(127, 255, 212, 0.418); */
+height: 2.5rem;
+width: 2.5rem;
+z-index: -1;
+display: flex;
+justify-content: center;
+align-items: center;
+animation: tapAnimation 1s ease-in-out infinite;
+}
+
+.tap-image-back-sub-ring{
+height: 1rem;
+width: 1rem;
+border-radius: 50%;
+background-color: rgb(255, 0, 157);
+border: 5px solid rgb(255, 0, 157);
+}
+
+@keyframes tapAnimation {
+  from{
+    transform: scale(0);
+    opacity: 1;
+  }
+  to{
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+#tap-image{
+  object-fit: cover;
+  width: 2rem;
+}
+
 @media (max-width: 480px) {
   .section-3-heading-container{
     width: 20rem;
@@ -584,7 +631,85 @@ main{
 
 /* main section code ends */
 
-footer{
-  height: 40vh;
+/* General Footer Styling */
+#footer {
   background-color: black;
+  color: white;
+  padding: 20px 0;
+  height: 40vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Container for Footer Content */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Logo */
+.footer-logo img {
+  width: 120px;
+  height: auto;
+}
+
+/* Footer Links */
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffcc00; /* Sweet Shop Brand Color */
+}
+
+/* Social Icons */
+.footer-social a {
+  margin-right: 15px;
+}
+
+.footer-social img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-logo {
+      margin-bottom: 20px;
+  }
+
+  .footer-links ul {
+      margin-bottom: 20px;
+  }
+
+  .footer-social {
+      margin-top: 10px;
+  }
 }
