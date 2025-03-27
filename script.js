@@ -3,21 +3,24 @@ const lenis = new Lenis({
   autoRaf: true,
 });
 
-// Listen for the scroll event and log the event data
+// Optional: Listen for the scroll event and log the event data
 // lenis.on('scroll', (e) => {
 //   console.log(e);
 // });
 
+// Navbar Listeners
 const navbarLI = document.querySelectorAll(".navbar-li");
 
-navbarLI.forEach(item => {
-    item.addEventListener("click", function(){
-      navbarLI.forEach(li=> li.classList.remove("selected"))
-      item.classList.add("selected")
-    })
+if (navbarLI.length) {
+  navbarLI.forEach(item => {
+    item.addEventListener("click", function() {
+      navbarLI.forEach(li => li.classList.remove("selected"));
+      item.classList.add("selected");
+    });
   });
+}
 
-
+// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 // Reusable scrollTrigger settings for odd elements
@@ -107,42 +110,41 @@ tl.from(".section2-image.odd2", {
   }
 }, "<");
 
-
-let hasReloaded = false;  
-let lastWidth = window.innerWidth;  
+// Resize handling
+let lastWidth = window.innerWidth;
 
 window.addEventListener('resize', function() {
- 
-  if (lastWidth > 480 && window.innerWidth <= 480 && !hasReloaded) {
-    hasReloaded = true;  
-    window.location.reload();  
+  // Avoid reloading the page - adjust layout dynamically using GSAP and CSS
+  if (lastWidth !== window.innerWidth) {
+    lastWidth = window.innerWidth;
+    
+    if (window.innerWidth <= 480) {
+      // For smaller screens
+      gsap.set("#section-3 .section-3-cake-images-container", { x: "60%" });
+    } else {
+      // For larger screens
+      gsap.set("#section-3 .section-3-cake-images-container", { x: "70%" });
+    }
   }
-
-  lastWidth = window.innerWidth;
 });
 
-
-
-
+// Adjust layout on initial load for mobile vs desktop
 if (window.innerWidth <= 480) {
   gsap.set("#section-3 .section-3-cake-images-container", { x: "60%" });
-}
-else{
+} else {
   gsap.set("#section-3 .section-3-cake-images-container", { x: "70%" });
 }
 
-
-
-gsap.to("#section-3 .section-3-cake-images-container",{
+// GSAP Scroll Animation
+gsap.to("#section-3 .section-3-cake-images-container", {
   x: "-45%",
-    ease: "power1.inOut",
-    scrollTrigger:{
-      trigger:"#section-3",
-      scroller:"body",
-      start:"top 0%",
-      end:"top -100%",
-      scrub:4,
-      pin:true
-    }
-})
-  
+  ease: "power1.inOut",
+  scrollTrigger: {
+    trigger: "#section-3",
+    scroller: "body",
+    start: "top 0%",
+    end: "top -100%",
+    scrub: 4,
+    pin: true
+  }
+});

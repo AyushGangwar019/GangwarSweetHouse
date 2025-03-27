@@ -119,13 +119,10 @@ header{
   #navbar{
     margin-top: 1rem;
   }
-}
-@media (max-width: 380px) {
   .navbar-li{
+    width: 4rem;
+    height: 3rem !important;
     font-size: 1rem;
-  }
-  .navbar-li:hover{
-    font-size: 1.1rem;
   }
 }
 /* media queries for the navbar ends */
